@@ -17,12 +17,14 @@ const App = () => {
 
   const getAccessToken = async (code: string) => {
     try {
-      const result = axios.get(`http://localhost:8000/auth/github?code=${code}`,);
-      console.log(result);
+      const result = await axios.get(`http://localhost:8000/auth/github?code=${code}`,);
+      setUser(result.data.profile);
     } catch (error) {
       console.log(error);
     }
   };
+
+  console.log(user);
 
   const redirectToGithub = () => {
     const redirectUri = 'http://localhost:5173';
@@ -32,7 +34,7 @@ const App = () => {
   if (user) {
     return (
       <div className="text-center">
-        <h1>Привет, {user.name || user.login}!</h1>
+        <h1>Привет, {user.name + user.login}!</h1>
         <img
           src={user.avatar_url}
           alt="Аватар"
@@ -40,6 +42,10 @@ const App = () => {
           style={{borderRadius: '50%'}}
         />
         <p>{user.bio}</p>
+        <p>{user.email}</p>
+        <p>{user.location}</p>
+        <p>{user.company || "not have"}</p>
+        <a href={user.html_url}>{user.html_url}</a>
       </div>
     );
   }
