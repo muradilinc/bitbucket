@@ -1,0 +1,7 @@
+node_modules
+.editorconfig
+.prettierrc
+package-lock.json
+package.json
+nodemone.json
+tsconfig.json
