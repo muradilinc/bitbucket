@@ -1,0 +1,13 @@
+node_modules
+public
+.editorconfig
+.gitignore
+.prettierrc
+eslint.config.js
+package.json
+package-lock.json
+README.md
+tsconfig.node.json
+tsconfig.json
+tsconfig.app.json
+vite.config.ts
