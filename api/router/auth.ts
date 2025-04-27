@@ -29,7 +29,7 @@ authRouter.get('/github', async (req, res, next): Promise<any> => {
     });
 
     const profile = await getUserGithub.json();
-    return res.send({profile});
+    return res.send({profile, token});
   } catch (error) {
     return next(error);
   }
