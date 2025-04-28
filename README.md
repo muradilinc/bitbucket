@@ -21,6 +21,7 @@ GitHub View — это веб-приложение с использование
     - express
     - cors
     - dotenv
+    - nodemon
 
 ## Пошаговая установка проекта
 
