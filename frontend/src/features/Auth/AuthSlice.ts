@@ -23,6 +23,11 @@ const authSlice = createSlice({
       state.user = null;
       state.token = null;
     },
+    updateUser(state, action: PayloadAction<Partial<User>>) {
+      if (state.user) {
+        Object.assign(state.user, action.payload);
+      }
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(getAccessToken.pending, (state) => {
@@ -42,7 +47,7 @@ const authSlice = createSlice({
   }
 });
 
-export const { logoutState } = authSlice.actions;
+export const {logoutState, updateUser} = authSlice.actions;
 
 export const authReducer = authSlice.reducer;
 export const selectUser = (state: RootState) => state.users.user;

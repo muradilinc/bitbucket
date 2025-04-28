@@ -53,7 +53,7 @@ export const Repositories = () => {
           <h4 className="text-[#fff] text-[16px] font-extralight">Repositories</h4>
           {!login &&
             pathname !== '/' &&
-            <select name="filter" value={selectFilter} onChange={changeField} className="text-[#ebebeb] outline-none">
+            <select name="filter" value={selectFilter} onChange={changeField} className="text-[#ebebeb] outline-none border border-[#ebebeb] rounded-[3px] px-[10px] py-[2px]">
               <option value="all">All</option>
               <option value="private">Private</option>
               <option value="public">Public</option>
