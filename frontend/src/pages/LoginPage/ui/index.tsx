@@ -1,5 +1,5 @@
 export const LoginPage = () => {
-  const clientId = 'Ov23li7YXDx5nIj0rXwa';
+  const clientId = import.meta.env.VITE_CLIENT_ID;
 
   const redirectToGithub = () => {
     const redirectUri = 'http://localhost:5173/standing';

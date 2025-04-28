@@ -5,7 +5,7 @@ const authRouter = express.Router();
 authRouter.get('/github', async (req, res, next): Promise<any> => {
   try {
     const response = await fetch(
-      'https://github.com/login/oauth/access_token?client_id=Ov23li7YXDx5nIj0rXwa&client_secret=d555790a073fdcfa4c6e3dcfabe56aca131eb3e9&code=' +
+      `https://github.com/login/oauth/access_token?client_id=${process.env.CLIENT_ID}&client_secret=${process.env.CLIENT_SECRET}&code=` +
       req.query.code,
       {
         method: 'POST',

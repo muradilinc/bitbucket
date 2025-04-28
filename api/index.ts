@@ -2,6 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import authRouter from "./router/auth";
 import reposRouter from './router/repos';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 const port = 8000;
